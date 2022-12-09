@@ -1,17 +1,16 @@
-// Copyright (c) 2022 aaryan
-// 
-// This software is released under the MIT License.
-// https://opensource.org/licenses/MIT
+{% extends 'base.html' %}
+{% block title %}Homepage{% endblock title %}   
+{% block body %} 
+<div class="text-center container bg-light rounded mt-5 p-5">
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-</head>
-<body>
-    <h1>Hello</h1>
-</body>
-</html>
+    <div class="display-2"> <b>WELCOME</b></div><br>
+    <form class = "" action="/pollpage/" method="POST">
+        {% csrf_token %}
+        <input class="form-control" type="text" name="username" placeholder = "Name" autofocus autocomplete = "off"><br>
+        <input class="form-control" type="text" name="password" placeholder="Password"><br>
+        <input class=" btn btn-primary" type="submit"  value = "Submit"></input>
+    </form>
+</div>
+            
+
+{% endblock body %}
